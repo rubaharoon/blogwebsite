@@ -1,8 +1,8 @@
 import React from "react";
-import { notFound } from "next/navigation"; 
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-
+import CommentSection from "@/components/commentsection";
 
 const blogs = [
   {
@@ -767,7 +767,7 @@ export default function BlogDetails({
   );
 
   if (!blog) {
-    notFound(); 
+    notFound();
   }
 
   return (
@@ -806,6 +806,7 @@ export default function BlogDetails({
           dangerouslySetInnerHTML={{ __html: blog.content || "" }}
         ></div>
       </div>
+      <CommentSection />
     </div>
   );
 }
